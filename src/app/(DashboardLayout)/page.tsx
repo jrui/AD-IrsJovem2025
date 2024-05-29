@@ -35,6 +35,7 @@ const Dashboard = () => {
           </Grid>
         </Grid>
       </Box>
+      <text style={{textAlign: 'center', marginTop: '20px', display: 'flex'}}>Made with 💙 by &nbsp;<a href="https://github.com/jrui/AD-IrsJovem2025">jrui</a></text>
     </PageContainer>
   )
 }
