@@ -12,11 +12,11 @@ export function BaseTable(props: typeof BaseTable.defaultProps) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Rendimento Coletável&nbsp;(€)</TableCell>
-            <TableCell align="right">Taxa marginal IRS Jovem</TableCell>
-            <TableCell align="right">Total IRS Jovem</TableCell>
-            <TableCell align="right">Regime geral de IRS</TableCell>
-            <TableCell align="right">Total Regime Geral</TableCell>
+            <TableCell><b>Rendimento Coletável&nbsp;(€)</b></TableCell>
+            <TableCell align="right"><b>Taxa marginal IRS Jovem</b></TableCell>
+            <TableCell align="right"><b>Total IRS Jovem</b></TableCell>
+            <TableCell align="right"><b>Regime geral de IRS</b></TableCell>
+            <TableCell align="right"><b>Total Regime Geral</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
