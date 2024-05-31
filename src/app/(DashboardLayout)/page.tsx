@@ -5,6 +5,9 @@ import RegimeGeralChart from '@/app/(DashboardLayout)/components/dashboard/Regim
 import { useState } from 'react';
 import { BaseTable } from './components/dashboard/BaseTable';
 import IRSJovemChart from './components/dashboard/IRSJovemChart';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 const Dashboard = () => {
   let [ baseSalary, setBaseSalary ] = useState(0);
@@ -15,10 +18,18 @@ const Dashboard = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
+      <Analytics />
+      <SpeedInsights />
       <Box>
         <Grid container spacing={3}>
           <Grid item xs={12} lg={12}>
-            <TextField id="outlined-basic" label="Salário Bruto Base Anual" variant="outlined" style={{ display: "flex" }} onChange={changeSalary} />
+            <TextField
+              id="outlined-basic"
+              label="Rendimento Bruto Base Anual (€)"
+              variant="outlined"
+              style={{ display: "flex", backgroundColor: 'white', textAlign: 'center'}}
+              onChange={changeSalary}
+            />
           </Grid>
           <Grid item xs={12} lg={8}>
             <BaseTable baseSalary={baseSalary} />

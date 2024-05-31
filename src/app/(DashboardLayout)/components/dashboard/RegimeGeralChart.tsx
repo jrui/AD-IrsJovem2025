@@ -82,20 +82,46 @@ export function RegimeGeralChart(props: IRegimeGeralChartProps) {
       <Grid container spacing={3}>
         {/* column */}
         <Grid item xs={7} sm={7}>
-          <Typography variant="h3" fontWeight="700">
-            {baseSalary - irs - ss}€
-          </Typography>
+          <Stack direction="row" spacing={1} mt={1} alignItems="center">
+            <Typography variant="h3" fontWeight="700">
+              {Math.round(((baseSalary - ss - irs) / 14 ) * 100) / 100}€
+            </Typography>
+            <Typography variant="subtitle2" color="textSecondary">
+                mês
+            </Typography>
+          </Stack>
           <Stack direction="row" spacing={1} mt={1} alignItems="center">
             <Avatar sx={{ bgcolor: successlight, width: 27, height: 27 }}>
               <IconArrowDownRight width={20} color="#FA896B" />
             </Avatar>
             <Typography variant="subtitle2" fontWeight="600">
-            -{Math.floor(((irs - irsJovem)/ irs)*100) || 0}%
+            {Math.round(((irsJovem - irs) / 14) * 100) / 100 || 0}€
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
               IRS Jovem
             </Typography>
           </Stack>
+
+          <Stack direction="row" spacing={1} mt={1} alignItems="center">
+            <Typography variant="h3" fontWeight="700">
+              {Math.round((baseSalary - ss - irs) * 100) / 100}€
+            </Typography>
+            <Typography variant="subtitle2" color="textSecondary">
+                ano
+            </Typography>
+          </Stack>
+          <Stack direction="row" spacing={1} mt={1} alignItems="center">
+            <Avatar sx={{ bgcolor: successlight, width: 27, height: 27 }}>
+              <IconArrowDownRight width={20} color="#FA896B" />
+            </Avatar>
+            <Typography variant="subtitle2" fontWeight="600">
+            {Math.round(((irsJovem - irs) / 100) * 100) || 0}€
+            </Typography>
+            <Typography variant="subtitle2" color="textSecondary">
+              IRS Jovem
+            </Typography>
+          </Stack>
+          
           <Stack spacing={3} mt={5} direction="row">
             <Stack direction="row" spacing={1} alignItems="center">
               <Avatar
@@ -123,7 +149,6 @@ export function RegimeGeralChart(props: IRegimeGeralChartProps) {
             </Stack>
           </Stack>
         </Grid>
-        {/* column */}
         <Grid item xs={5} sm={5}>
           <Chart
             options={optionscolumnchart}

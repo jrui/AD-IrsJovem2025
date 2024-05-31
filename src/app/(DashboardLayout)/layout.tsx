@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <MainWrapper className="mainwrapper">
+    <MainWrapper className="mainwrapper" style={{backgroundColor: 'lightgray'}}>
       <PageWrapper className="page-wrapper">
         {/* ------------------------------------------- */}
         {/* PageContent */}
